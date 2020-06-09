@@ -4,7 +4,7 @@ import { View, Text, ImageBackground, Image, StyleSheet } from "react-native";
 export default function WelcomeScreen() {
   return (
     <ImageBackground
-      blurRadius={2}
+      blurRadius={3}
       style={styles.background}
       source={require("../assets/welcomeBackground.jpg")}
     >
@@ -13,7 +13,7 @@ export default function WelcomeScreen() {
           source={require("../assets/logo/logo_transparent.png")}
           style={styles.logo}
         />
-        <Text>Hello there</Text>
+        <Text style={styles.tagLine}>Review Before Moving In</Text>
       </View>
     </ImageBackground>
   );
@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
   },
-  tagLine: {},
+  tagLine: {
+    fontSize: 24,
+    fontWeight: "600",
+    position: "relative",
+    bottom: 40,
+  },
   buttonsContainer: {},
 });
