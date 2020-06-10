@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, ImageBackground, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  StyleSheet,
+  ClippingRectangle,
+} from "react-native";
+import AppButton from "../components/AppButton";
 
 export default function WelcomeScreen() {
   return (
@@ -15,6 +23,19 @@ export default function WelcomeScreen() {
         />
         <Text style={styles.tagLine}>Review Before Moving In</Text>
       </View>
+
+      <View style={styles.buttonsContainer}>
+        <AppButton
+          title="Login"
+          onPress={() => console.log("login pressed")}
+          bgColor="primary"
+        />
+        <AppButton
+          title="SignUp"
+          onPress={() => console.log("signup pressed")}
+          bgColor="secondary"
+        />
+      </View>
     </ImageBackground>
   );
 }
@@ -22,7 +43,7 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    // justifyContent: "flex-end",
+    justifyContent: "flex-end",
     alignItems: "center",
   },
   logoContainer: {
@@ -38,7 +59,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "600",
     position: "relative",
-    bottom: 40,
+    bottom: 37,
   },
-  buttonsContainer: {},
+  buttonsContainer: {
+    padding: 20,
+    width: "100%",
+  },
 });
