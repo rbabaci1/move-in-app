@@ -1,18 +1,12 @@
 import React from "react";
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  StyleSheet,
-  ClippingRectangle,
-} from "react-native";
+import { View, Text, ImageBackground, Image, StyleSheet } from "react-native";
 import AppButton from "../components/AppButton";
+import colors from "../config/colors";
 
 export default function WelcomeScreen() {
   return (
     <ImageBackground
-      blurRadius={3}
+      blurRadius={1}
       style={styles.background}
       source={require("../assets/welcomeBackground.jpg")}
     >
@@ -59,6 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "600",
     position: "relative",
+    color: colors.darkBlue,
     bottom: 37,
   },
   buttonsContainer: {
