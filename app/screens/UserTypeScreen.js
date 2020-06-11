@@ -34,13 +34,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   box: {
+    justifyContent: "center",
+    alignItems: "center",
     width: 200,
     height: 200,
     marginVertical: 30,
     borderRadius: 100,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: colors.white,
     shadowColor: colors.medium,
     shadowOffset: {
       width: 0,
