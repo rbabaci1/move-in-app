@@ -4,20 +4,21 @@ import { Zocial as GuestIcon, Entypo as UserIcon } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 import SafeScreen from "../components/SafeScreen";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function UserTypeScreen() {
   return (
     <SafeScreen style={styles.safeScreen}>
       <View style={styles.container}>
-        <View style={styles.box}>
-          <UserIcon name="user" color="#6cad5d" size={70} />
+        <TouchableOpacity style={styles.box}>
+          <UserIcon name="user" color={colors.primary} size={70} />
           <Text style={styles.text}>Account</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={styles.box}>
-          <GuestIcon name="guest" color="gray" size={70} />
+        <TouchableOpacity style={styles.box}>
+          <GuestIcon name="guest" color={colors.medium} size={70} />
           <Text style={styles.text}>Guest</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </SafeScreen>
   );
@@ -34,14 +35,19 @@ const styles = StyleSheet.create({
   },
   box: {
     width: 200,
-    height: 180,
-    marginVertical: 20,
+    height: 200,
+    marginVertical: 30,
+    borderRadius: 100,
     backgroundColor: "#fff",
-    borderWidth: 1,
-    borderColor: "lightgray",
-    borderRadius: 3,
     justifyContent: "center",
     alignItems: "center",
+    shadowColor: colors.medium,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.15,
+    elevation: 1,
   },
   text: {
     fontSize: 22,
