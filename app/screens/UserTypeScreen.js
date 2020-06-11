@@ -7,7 +7,7 @@ import SafeScreen from "../components/SafeScreen";
 
 export default function UserTypeScreen() {
   return (
-    <SafeScreen style={styles.screen}>
+    <SafeScreen style={styles.safeScreen}>
       <View style={styles.container}>
         <View style={styles.box}>
           <UserIcon name="user" color="#6cad5d" size={70} />
@@ -24,8 +24,7 @@ export default function UserTypeScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
+  safeScreen: {
     backgroundColor: colors.light,
   },
   container: {
