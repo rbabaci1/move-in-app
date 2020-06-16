@@ -21,7 +21,7 @@ export default function ListItem({
           {IconComponent}
           {image && <Image source={image} style={styles.image} />}
 
-          <View style={styles.infoContainer}>
+          <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
             {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, FlatList } from "react-native";
+import { StyleSheet } from "react-native";
 
 import SafeScreen from "../components/SafeScreen";
 import colors from "../config/colors";
@@ -10,8 +10,18 @@ import Icon from "../components/Icon";
 const listItems = [
   {
     id: 1,
+    title: "My Profile",
+    icon: { name: "face-profile", backgroundColor: colors.secondary },
+  },
+  {
+    id: 2,
+    title: "My Reviews",
+    icon: { name: "yelp", backgroundColor: colors.primary },
+  },
+  {
+    id: 3,
     title: "Logout",
-    icon: { name: "logout", backgroundColor: colors.danger },
+    icon: { name: "logout", backgroundColor: "#ff9e83" },
   },
 ];
 
@@ -25,24 +35,16 @@ export default function UserAccountScreen() {
         subTitle="rbabaci1@gmail.com"
       />
 
-      <View style={styles.userInfo}>
-        <FlatList
-          data={listItems}
-          keyExtractor={listItem => listItem.id}
-          ItemSeparatorComponent={ListItemSeparator}
-          renderItem={({ item }) => (
-            <ListItem
-              title={item.title}
-              IconComponent={
-                <Icon
-                  name={item.icon.name}
-                  backgroundColor={item.icon.backgroundColor}
-                />
-              }
-            />
-          )}
+      {listItems.map(({ id, title, icon }) => (
+        <ListItem
+          key={id}
+          style={styles.listItem}
+          title={title}
+          IconComponent={
+            <Icon name={icon.name} backgroundColor={icon.backgroundColor} />
+          }
         />
-      </View>
+      ))}
     </SafeScreen>
   );
 }
@@ -53,5 +55,8 @@ const styles = StyleSheet.create({
   },
   userInfo: {
     marginVertical: 50,
+  },
+  listItem: {
+    marginVertical: 10,
   },
 });
