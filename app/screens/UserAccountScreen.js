@@ -16,14 +16,9 @@ const listItems = [
 export default function UserAccountScreen() {
   return (
     <SafeScreen style={styles.screen}>
-      <View style={styles.container}>
-        <ListItem /> // todo
-      </View>
+      <View style={styles.container}></View>
 
-      <View>
-        <FlatList data={listItems} />
-        // todo
-      </View>
+      <View></View>
     </SafeScreen>
   );
 }

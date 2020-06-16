@@ -7,7 +7,7 @@ import SafeScreen from "./app/components/SafeScreen";
 import UserTypeScreen from "./app/screens/UserTypeScreen";
 
 export default function App() {
-  return <UserTypeScreen />;
+  return <UserAccountScreen />;
 }
 
 const styles = StyleSheet.create({
