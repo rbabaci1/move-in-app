@@ -12,11 +12,12 @@ export default function ListItem({
   onPress,
   renderRightActions,
   IconComponent,
+  style,
 }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
-        <View style={styles.container}>
+        <View style={[styles.container, style]}>
           {IconComponent}
           {image && <Image source={image} style={styles.image} />}
 
@@ -30,4 +31,25 @@ export default function ListItem({
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    padding: 15,
+    backgroundColor: colors.white,
+  },
+  image: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+  },
+  detailsContainer: {
+    marginLeft: 10,
+    justifyContent: "center",
+  },
+  title: {
+    fontWeight: "500",
+  },
+  subTitle: {
+    color: colors.medium,
+  },
+});
