@@ -12,7 +12,7 @@ export default function UserTypeScreen() {
       <View style={styles.container}>
         <TouchableOpacity style={styles.box}>
           <UserIcon name="user" color={colors.primary} size={70} />
-          <Text style={styles.text}>Account</Text>
+          <Text style={styles.text}>Member</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.box}>
